@@ -1,1 +1,1 @@
-Simple URL shortener with React and Django
+Simple URL shortener with Vanilla JS and Django
