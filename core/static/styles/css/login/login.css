@@ -1,0 +1,99 @@
+/* line 2, ../../scss/login/login.scss */
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+/* line 9, ../../scss/login/login.scss */
+.login-wrapper {
+  width: 500px;
+  background: linear-gradient(top, #7579ff, #b224ef);
+  background: -webkit-linear-gradient(top, #7579ff, #b224ef);
+  padding: 50px 0;
+  border-radius: 10px;
+}
+/* line 17, ../../scss/login/login.scss */
+.login-logo {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  display: inline;
+  width: 230px;
+}
+/* line 24, ../../scss/login/login.scss */
+.login-logo-text {
+  font-size: 30px;
+  font-weight: 700;
+  font-family: Poppins, sans-serif;
+  color: black;
+}
+/* line 28, ../../scss/login/login.scss */
+.login-logo-icon {
+  padding: 5px;
+  background-color: blue;
+  display: inline-flex;
+  justify-content: center;
+  align-content: center;
+  border-radius: 5px;
+  margin-left: 5px;
+}
+/* line 37, ../../scss/login/login.scss */
+.login-logo-icon i {
+  font-size: 30px;
+  color: white;
+}
+/* line 44, ../../scss/login/login.scss */
+.login-greeting {
+  width: 75%;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: Poppins, sans-serif;
+  color: white;
+}
+/* line 48, ../../scss/login/login.scss */
+.login-greeting h1 {
+  font-size: 30px;
+  font-weight: 700;
+  font-family: Poppins, sans-serif;
+  color: white;
+  margin-top: 70px;
+}
+/* line 51, ../../scss/login/login.scss */
+.login-greeting h1 span {
+  padding: 5px;
+  background-color: #2274ff;
+  border-radius: 10px;
+}
+/* line 59, ../../scss/login/login.scss */
+.login-form {
+  width: 100%;
+  margin-top: 30px;
+}
+/* line 63, ../../scss/login/login.scss */
+.login-form-input {
+  background: transparent;
+  border: none;
+  padding-bottom: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Poppins, sans-serif;
+  color: white;
+}
+/* line 69, ../../scss/login/login.scss */
+.login-form-input::placeholder {
+  color: white;
+}
+/* line 74, ../../scss/login/login.scss */
+.login-form-label {
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+  width: 60%;
+  display: inline-flex;
+  align-items: center;
+}
+/* line 80, ../../scss/login/login.scss */
+.login-form-label i {
+  margin: 0 20px 10px 0;
+  color: white;
+}

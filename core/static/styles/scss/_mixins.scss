@@ -1,0 +1,10 @@
+@mixin font($size, $weight) {
+  font-size: #{$size + 'px'};
+  font-weight: $weight;
+  font-family: Poppins, sans-serif
+}
+
+@mixin text($size, $weight, $color) {
+  @include font($size, $weight);
+  color: $color
+}

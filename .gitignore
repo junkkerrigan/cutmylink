@@ -2,15 +2,12 @@
 
 .idea
 
-# React
-
-node_modules/
-
-dist/
-
 # Django
 
 __pycache__/
 
 db.sqlite3
 
+# Compass
+
+/core/static/styles/.sass-cache/

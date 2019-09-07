@@ -1,0 +1,13 @@
+a {
+  &, &:hover, *, *:hover {
+    text-decoration: none;
+  }
+}
+
+input {
+  &:focus, &:active, &:focus-within {
+    outline: none;
+    border: none;
+  }
+}
+

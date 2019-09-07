@@ -1,0 +1,86 @@
+@import "../_mixins";
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  &-wrapper {
+    width: 500px;
+    background: linear-gradient(top, #7579ff, #b224ef);
+    background: -webkit-linear-gradient(top, #7579ff, #b224ef);
+    padding: 50px 0;
+    border-radius: 10px;
+  }
+
+  &-logo {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    display: inline;
+    width: 230px;
+
+    &-text {
+      @include text(30, 700, black);
+    }
+
+    &-icon {
+      padding: 5px;
+      background-color: blue;
+      display: inline-flex;
+      justify-content: center;
+      align-content: center;
+      border-radius: 5px;
+      margin-left: 5px;
+
+      i {
+        font-size: 30px;
+        color: white
+      }
+    }
+  }
+
+  &-greeting {
+    width: 75%;
+    @include text(20, 500, white);
+
+    h1 {
+      @include text(30, 700, white);
+      margin-top: 70px;
+      span {
+        padding: 5px;
+        background-color: #2274ff;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  &-form {
+    width: 100%;
+    margin-top: 30px;
+
+    &-input {
+      background: transparent;
+      border: none;
+      padding-bottom: 10px;
+      @include text(14, 400, white);
+
+      &::placeholder {
+        color: white;
+      }
+    }
+
+    &-label {
+      border-bottom: 2px solid rgba(255, 255, 255, .4);
+      width: 60%;
+      display: inline-flex;
+      align-items: center;
+
+      i {
+        margin: 0 20px 10px 0;
+        color: white;
+      }
+    }
+  }
+}
