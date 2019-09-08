@@ -1,0 +1,95 @@
+@import "../variables";
+@import "../mixins";
+
+.main {
+  &-header {
+    height: 60px;
+    @include gradient(top);
+
+    .nav {
+      position: relative;
+
+      &bar {
+        @include gradient(top);
+        padding: 0!important;
+
+        &-toggler {
+          border-color: white;
+          border-width: 1.5px;
+
+          i {
+            font-size: 30px;
+            color: white;
+          }
+        }
+
+        &-collapse {
+          margin-left: 30px;
+          transition: 0s;
+
+          @media (min-width: $_min_lg) {
+            height: 100%;
+          }
+
+          @media (max-width: $_max_md) {
+            margin-left: 0;
+            width: 200px;
+            position: absolute;
+            right: -20px;
+            bottom: 0;
+            transform: translate(0, 100%);
+          }
+        }
+      }
+
+      &-item {
+        padding: 0 20px;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        @media (min-width: $_min_lg) {
+          &:hover {
+            @include gradient();
+          }
+        }
+
+        @media (max-width: $_max_md) {
+          display: flex;
+          justify-content: flex-end;
+          padding: 10px 20px 10px 0;
+        }
+      }
+
+      &-link {
+        @include font(20, 500);
+        color: white!important;
+        border-bottom: 2px solid transparent;
+
+        @media (max-width: $_max_md) {
+          padding: 0 0 10px 15px;
+
+          &:hover {
+            border-bottom: 2px solid white;
+          }
+        }
+      }
+    }
+  }
+
+  &-logo {
+    @include logo();
+
+    .logo {
+      &-text {
+        font-size: 22px;
+      }
+
+      &-icon i {
+        font-size: 20px;
+      }
+    }
+  }
+}
+

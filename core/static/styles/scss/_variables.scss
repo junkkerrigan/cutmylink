@@ -1,0 +1,9 @@
+$_min_sm: 425px;
+$_min_md: 768px;
+$_min_lg: 992px;
+$_min_xl: 1200px;
+
+$_max_xs: #{$_min_sm - 1px};
+$_max_sm: #{$_min_md - 1px};
+$_max_md: #{$_min_lg - 1px};
+$_max_lg: #{$_min_xl - 1px};

@@ -9,38 +9,12 @@
 
   &-wrapper {
     width: 500px;
-    background: linear-gradient(bottom, #7579ff, #b224ef);
-    background: -webkit-linear-gradient(bottom, #7579ff, #b224ef);
+    @include gradient();
     padding: 50px 0 30px;
     border-radius: 10px;
   }
 
-  &-logo {
-    background-color: white;
-    padding: 10px;
-    border-radius: 10px;
-    display: inline;
-    width: 230px;
-
-    &-text {
-      @include text(30, 700, black);
-    }
-
-    &-icon {
-      padding: 5px;
-      background-color: blue;
-      display: inline-flex;
-      justify-content: center;
-      align-content: center;
-      border-radius: 5px;
-      margin-left: 5px;
-
-      i {
-        font-size: 30px;
-        color: white
-      }
-    }
-  }
+  @include logo();
 
   &-greeting {
     width: 68%;
@@ -96,8 +70,7 @@
       position: absolute;
 
       &:hover {
-        background: linear-gradient(top, #7579ff, #b224ef);
-        background: -webkit-linear-gradient(top, #7579ff, #b224ef);
+        @include gradient(top);
         @include text(18, 700, white);
         transform: translate(-50%, calc(-50% + 4px));
         box-shadow: 0 0 10px rgba(0, 0, 0, .5);
