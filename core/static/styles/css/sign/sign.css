@@ -1,36 +1,36 @@
-/* line 3, ../../scss/login/login.scss */
-.login {
+/* line 3, ../../scss/sign/sign.scss */
+.sign {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
-/* line 10, ../../scss/login/login.scss */
-.login-wrapper {
+/* line 10, ../../scss/sign/sign.scss */
+.sign-wrapper {
   width: 500px;
   background: linear-gradient(bottom, #7579ff, #b224ef);
   background: -webkit-linear-gradient(bottom, #7579ff, #b224ef);
   padding: 50px 0 30px;
   border-radius: 10px;
 }
-/* line 18, ../../scss/login/login.scss */
-.login-logo {
+/* line 18, ../../scss/sign/sign.scss */
+.sign-logo {
   background-color: white;
   padding: 10px;
   border-radius: 10px;
   display: inline;
   width: 230px;
 }
-/* line 25, ../../scss/login/login.scss */
-.login-logo-text {
+/* line 25, ../../scss/sign/sign.scss */
+.sign-logo-text {
   font-size: 30px;
   font-weight: 700;
   font-family: Poppins, sans-serif;
   color: black;
 }
-/* line 29, ../../scss/login/login.scss */
-.login-logo-icon {
+/* line 29, ../../scss/sign/sign.scss */
+.sign-logo-icon {
   padding: 5px;
   background-color: blue;
   display: inline-flex;
@@ -39,43 +39,43 @@
   border-radius: 5px;
   margin-left: 5px;
 }
-/* line 38, ../../scss/login/login.scss */
-.login-logo-icon i {
+/* line 38, ../../scss/sign/sign.scss */
+.sign-logo-icon i {
   font-size: 30px;
   color: white;
 }
-/* line 45, ../../scss/login/login.scss */
-.login-greeting {
+/* line 45, ../../scss/sign/sign.scss */
+.sign-greeting {
   width: 75%;
   font-size: 20px;
   font-weight: 500;
   font-family: Poppins, sans-serif;
   color: white;
 }
-/* line 49, ../../scss/login/login.scss */
-.login-greeting h1 {
+/* line 49, ../../scss/sign/sign.scss */
+.sign-greeting h1 {
   font-size: 30px;
   font-weight: 700;
   font-family: Poppins, sans-serif;
   color: white;
   margin-top: 70px;
 }
-/* line 52, ../../scss/login/login.scss */
-.login-greeting h1 span {
+/* line 52, ../../scss/sign/sign.scss */
+.sign-greeting h1 span {
   padding: 5px;
   background-color: #2274ff;
   border-radius: 10px;
 }
-/* line 60, ../../scss/login/login.scss */
-.login-form {
+/* line 60, ../../scss/sign/sign.scss */
+.sign-form {
   width: 100%;
   margin-top: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-/* line 67, ../../scss/login/login.scss */
-.login-form-input {
+/* line 67, ../../scss/sign/sign.scss */
+.sign-form-input {
   background: transparent;
   border: none;
   padding-bottom: 10px;
@@ -84,20 +84,20 @@
   font-family: Poppins, sans-serif;
   color: white;
 }
-/* line 73, ../../scss/login/login.scss */
-.login-form-input::placeholder {
+/* line 73, ../../scss/sign/sign.scss */
+.sign-form-input::placeholder {
   color: white;
 }
-/* line 78, ../../scss/login/login.scss */
-.login-form-checkbox {
+/* line 78, ../../scss/sign/sign.scss */
+.sign-form-checkbox {
   width: 15px;
   height: 15px;
   border-radius: 3px;
   background-color: white;
   margin-right: 10px;
 }
-/* line 86, ../../scss/login/login.scss */
-.login-form-submit {
+/* line 86, ../../scss/sign/sign.scss */
+.sign-form-submit {
   padding: 10px 40px;
   border-radius: 30px;
   background: white;
@@ -111,8 +111,8 @@
   color: #1C0C0A;
   position: absolute;
 }
-/* line 98, ../../scss/login/login.scss */
-.login-form-submit:hover {
+/* line 98, ../../scss/sign/sign.scss */
+.sign-form-submit:hover {
   background: linear-gradient(top, #7579ff, #b224ef);
   background: -webkit-linear-gradient(top, #7579ff, #b224ef);
   font-size: 18px;
@@ -122,22 +122,22 @@
   transform: translate(-50%, calc(-50% + 4px));
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-/* line 107, ../../scss/login/login.scss */
-.login-form-label {
+/* line 107, ../../scss/sign/sign.scss */
+.sign-form-label {
   border-bottom: 2px solid rgba(255, 255, 255, 0.4);
   width: 60%;
   display: inline-flex;
   align-items: center;
   margin-bottom: 30px;
 }
-/* line 114, ../../scss/login/login.scss */
-.login-form-label i {
+/* line 114, ../../scss/sign/sign.scss */
+.sign-form-label i {
   margin: 0 20px 10px 0;
   color: white;
   font-size: 20px;
 }
-/* line 120, ../../scss/login/login.scss */
-.login-form-label.checkbox-label {
+/* line 120, ../../scss/sign/sign.scss */
+.sign-form-label.checkbox-label {
   border: none;
   font-size: 14px;
   font-weight: 400;
@@ -145,20 +145,20 @@
   color: white;
   margin-left: 50px;
 }
-/* line 128, ../../scss/login/login.scss */
-.login-join {
+/* line 128, ../../scss/sign/sign.scss */
+.sign-join {
   margin-top: 50px;
   font-size: 16px;
   font-weight: 400;
   font-family: Poppins, sans-serif;
   color: white;
 }
-/* line 132, ../../scss/login/login.scss */
-.login-join-link {
+/* line 132, ../../scss/sign/sign.scss */
+.sign-join-link {
   color: #1C0C0A;
 }
-/* line 135, ../../scss/login/login.scss */
-.login-join-link:hover {
+/* line 135, ../../scss/sign/sign.scss */
+.sign-join-link:hover {
   color: #1C0C0A;
   border-bottom: 1.25px solid #1C0C0A;
 }
