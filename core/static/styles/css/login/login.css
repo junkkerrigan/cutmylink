@@ -1,4 +1,4 @@
-/* line 2, ../../scss/login/login.scss */
+/* line 3, ../../scss/login/login.scss */
 .login {
   display: flex;
   flex-direction: column;
@@ -6,15 +6,15 @@
   align-items: center;
   text-align: center;
 }
-/* line 9, ../../scss/login/login.scss */
+/* line 10, ../../scss/login/login.scss */
 .login-wrapper {
   width: 500px;
-  background: linear-gradient(top, #7579ff, #b224ef);
-  background: -webkit-linear-gradient(top, #7579ff, #b224ef);
+  background: linear-gradient(bottom, #7579ff, #b224ef);
+  background: -webkit-linear-gradient(bottom, #7579ff, #b224ef);
   padding: 50px 0;
   border-radius: 10px;
 }
-/* line 17, ../../scss/login/login.scss */
+/* line 18, ../../scss/login/login.scss */
 .login-logo {
   background-color: white;
   padding: 10px;
@@ -22,14 +22,14 @@
   display: inline;
   width: 230px;
 }
-/* line 24, ../../scss/login/login.scss */
+/* line 25, ../../scss/login/login.scss */
 .login-logo-text {
   font-size: 30px;
   font-weight: 700;
   font-family: Poppins, sans-serif;
   color: black;
 }
-/* line 28, ../../scss/login/login.scss */
+/* line 29, ../../scss/login/login.scss */
 .login-logo-icon {
   padding: 5px;
   background-color: blue;
@@ -39,12 +39,12 @@
   border-radius: 5px;
   margin-left: 5px;
 }
-/* line 37, ../../scss/login/login.scss */
+/* line 38, ../../scss/login/login.scss */
 .login-logo-icon i {
   font-size: 30px;
   color: white;
 }
-/* line 44, ../../scss/login/login.scss */
+/* line 45, ../../scss/login/login.scss */
 .login-greeting {
   width: 75%;
   font-size: 20px;
@@ -52,7 +52,7 @@
   font-family: Poppins, sans-serif;
   color: white;
 }
-/* line 48, ../../scss/login/login.scss */
+/* line 49, ../../scss/login/login.scss */
 .login-greeting h1 {
   font-size: 30px;
   font-weight: 700;
@@ -60,40 +60,89 @@
   color: white;
   margin-top: 70px;
 }
-/* line 51, ../../scss/login/login.scss */
+/* line 52, ../../scss/login/login.scss */
 .login-greeting h1 span {
   padding: 5px;
   background-color: #2274ff;
   border-radius: 10px;
 }
-/* line 59, ../../scss/login/login.scss */
+/* line 60, ../../scss/login/login.scss */
 .login-form {
   width: 100%;
   margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 30px;
 }
-/* line 63, ../../scss/login/login.scss */
+/* line 68, ../../scss/login/login.scss */
 .login-form-input {
   background: transparent;
   border: none;
   padding-bottom: 10px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   font-family: Poppins, sans-serif;
   color: white;
 }
-/* line 69, ../../scss/login/login.scss */
+/* line 74, ../../scss/login/login.scss */
 .login-form-input::placeholder {
   color: white;
 }
-/* line 74, ../../scss/login/login.scss */
+/* line 81, ../../scss/login/login.scss */
+.login-form-checkbox {
+  width: 15px;
+  height: 15px;
+  border-radius: 3px;
+  background-color: white;
+  margin-right: 10px;
+}
+/* line 89, ../../scss/login/login.scss */
+.login-form-submit {
+  padding: 10px 40px;
+  border-radius: 30px;
+  background: white;
+  transition: .3s;
+  border: none;
+  box-shadow: none;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  font-weight: 500;
+  font-family: Poppins, sans-serif;
+  color: #1C0C0A;
+  position: absolute;
+}
+/* line 101, ../../scss/login/login.scss */
+.login-form-submit:hover {
+  background: linear-gradient(top, #7579ff, #b224ef);
+  background: -webkit-linear-gradient(top, #7579ff, #b224ef);
+  font-size: 18px;
+  font-weight: 700;
+  font-family: Poppins, sans-serif;
+  color: white;
+  transform: translate(-50%, calc(-50% + 4px));
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+/* line 110, ../../scss/login/login.scss */
 .login-form-label {
   border-bottom: 2px solid rgba(255, 255, 255, 0.4);
   width: 60%;
   display: inline-flex;
   align-items: center;
+  margin-bottom: 30px;
 }
-/* line 80, ../../scss/login/login.scss */
+/* line 117, ../../scss/login/login.scss */
 .login-form-label i {
   margin: 0 20px 10px 0;
   color: white;
+  font-size: 20px;
+}
+/* line 123, ../../scss/login/login.scss */
+.login-form-label.checkbox-label {
+  border: none;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: Poppins, sans-serif;
+  color: white;
+  margin-left: 50px;
 }

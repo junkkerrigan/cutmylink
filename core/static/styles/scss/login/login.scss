@@ -1,4 +1,5 @@
 @import "../_mixins";
+
 .login {
   display: flex;
   flex-direction: column;
@@ -8,8 +9,8 @@
 
   &-wrapper {
     width: 500px;
-    background: linear-gradient(top, #7579ff, #b224ef);
-    background: -webkit-linear-gradient(top, #7579ff, #b224ef);
+    background: linear-gradient(bottom, #7579ff, #b224ef);
+    background: -webkit-linear-gradient(bottom, #7579ff, #b224ef);
     padding: 50px 0;
     border-radius: 10px;
   }
@@ -59,15 +60,50 @@
   &-form {
     width: 100%;
     margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 30px;
 
     &-input {
       background: transparent;
       border: none;
       padding-bottom: 10px;
-      @include text(14, 400, white);
+      @include text(16, 400, white);
 
       &::placeholder {
         color: white;
+      }
+
+
+    }
+
+    &-checkbox {
+      width: 15px;
+      height: 15px;
+      border-radius: 3px;
+      background-color: white;
+      margin-right: 10px;
+    }
+
+    &-submit {
+      padding: 10px 40px;
+      border-radius: 30px;
+      background: white;
+      transition: .3s;
+      border: none;
+      box-shadow: none;
+      transform: translate(-50%, -50%);
+      @include text(16, 500, #1C0C0A);
+
+      position: absolute;
+
+      &:hover {
+        background: linear-gradient(top, #7579ff, #b224ef);
+        background: -webkit-linear-gradient(top, #7579ff, #b224ef);
+        @include text(18, 700, white);
+        transform: translate(-50%, calc(-50% + 4px));
+        box-shadow: 0 0 10px rgba(0, 0, 0, .5);
       }
     }
 
@@ -76,10 +112,18 @@
       width: 60%;
       display: inline-flex;
       align-items: center;
+      margin-bottom: 30px;
 
       i {
         margin: 0 20px 10px 0;
         color: white;
+        font-size:20px;
+      }
+
+      &.checkbox-label {
+        border: none;
+        @include text(14, 400, white);
+        margin-left: 50px;
       }
     }
   }

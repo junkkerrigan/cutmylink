@@ -14,6 +14,7 @@
     <script src="https://kit.fontawesome.com/6ef5b74245.js"></script>
 </head>
 <body>
+    <!-- TODO: add checkbox functionality -->
     <div class="d-flex justify-content-center align-items-center vh-100 w-100">
         <div class="login-wrapper">
             <div class="login">
@@ -33,6 +34,7 @@
                     </p>
                 </div>
                 <form class="login-form">
+                    <!-- TODO: add inputs hover effects -->
                     <label class="login-form-label">
                         <i class="fas fa-user"></i>
                         <input
@@ -42,6 +44,29 @@
                             placeholder="Username"
                         >
                     </label>
+    <!-- TODO: add changing of  input type to "password" whenever user starts to type -->
+                    <label class="login-form-label">
+                        <i class="fas fa-lock"></i>
+                        <input
+                            type="text"
+                            class="login-form-input"
+                            name="password"
+                            placeholder="Password"
+                        >
+                    </label>
+                    <!-- TODO: add checkbox functionality -->
+                    <label class="login-form-label checkbox-label">
+                        <span class="login-form-checkbox"></span>
+                        <input
+                            type="checkbox"
+                            name="remember"
+                            class="d-none"
+                        >
+                        Remember me
+                    </label>
+                    <div class="d-relative mt-4">
+                        <button type="submit" class="login-form-submit">Log in!</button>
+                     </div>
                 </form>
             </div>
         </div>
