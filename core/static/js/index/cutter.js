@@ -1,4 +1,7 @@
+// instance of this class long link id to short link
 class Converter {
+
+    // creates alphabet for converting to custom base
     constructor() {
         this._positions = [];
 
@@ -15,6 +18,7 @@ class Converter {
         this._alphabet = String.fromCharCode(...this._positions);
     }
 
+    // converts passed number to custom base
     convert(id, base = 62) {
         if (!Number.isInteger(base) || base < 2 || base > 62) {
             throw new Error('Wrong base: base must be integer between 2 and 62');
@@ -28,7 +32,6 @@ class Converter {
         }
 
         while(id >= 1) {
-            console.log(`idx: ${idx}\nid: ${id}`);
             idx = id % base;
             id = Math.floor(id / base);
             converted += this._alphabet[idx];
@@ -38,17 +41,20 @@ class Converter {
     }
 }
 
+// button that triggers cutter
 const cutLinkBtn = document.querySelector(
     'button[data-appointment="cutLink"]');
 
 const hostName = 'localhost:8000';
 
+// makes container for short link existing but invisible
 const createContainer = () => {
     const resultContainer = document.querySelector(
         '[data-appointment="resultContainer"]');
     resultContainer.classList.add('invisible', 'd-block');
 };
 
+// makes container visible and inserts short link into it
 const showResult = shortLink => {
     const resultContainer = document.querySelector(
         '[data-appointment="resultContainer"]');
@@ -59,10 +65,9 @@ const showResult = shortLink => {
     result.innerText = `${hostName}/#${shortLink}`;
 };
 
-const scrollToSectionBottom = () => {
-    const section = document.querySelector(
-        '[data-appointment="cutterSection"]');
-    section.scrollIntoView(
+// scrolls window to bottom of passed element
+const scrollToBottom = elem => {
+    elem.scrollIntoView(
         {
             block: 'end',
             behavior: 'smooth',
@@ -70,12 +75,15 @@ const scrollToSectionBottom = () => {
     );
 };
 
-const handleLinkBtnClick = event => {
+// cuts long link, saves it to localStorage and displays short link
+const cut = event => {
+    // receiving long link
     const input = document.querySelector('input[name="longLink"]');
     const longLink = input.value;
     // TODO: add links validator
     // TODO: check if short url already exists
 
+    // calculating id for long link
     let lastId = localStorage.getItem('lastId');
 
     let curId;
@@ -88,27 +96,34 @@ const handleLinkBtnClick = event => {
 
     localStorage.setItem('lastId', curId);
 
+    // converting id to short link
     const c = new Converter();
     const shortLink = c.convert(curId);
 
+    // saving pair <shortLink, longLink> to localStorage
     localStorage.setItem(shortLink, longLink);
 
+    // displaying short link
     const resultPromise = new Promise( resolve => {
         createContainer();
         resolve();
     });
+
     resultPromise
         .then(() => {
             return new Promise( resolve => {
-                scrollToSectionBottom();
+                const section = document.querySelector(
+            '[data-appointment="cutterSection"]');
+                scrollToBottom(section);
                 setTimeout(() => resolve(shortLink), 200);
             })
         })
         .then(showResult);
 };
 
-cutLinkBtn.addEventListener('click', handleLinkBtnClick);
+cutLinkBtn.addEventListener('click', cut);
 
+// redirects to stored long link
 const redirect = event => {
     if (window.location.hash.length < 1)
         return;
@@ -122,25 +137,44 @@ const redirect = event => {
 window.addEventListener('load', redirect);
 window.addEventListener('hashchange', redirect);
 
+// button that copies short link to clipboard
 const copyResultBtn = document.querySelector(
     '[data-appointment="copyResult"]');
+
+// source to copy short link from
 const copyFrom =document.querySelector(
     '[data-appointment="result"]');
 
+// copies short link to clipboard and shows popover
 const copy = event => {
+    // getting source to copy from
     const range = document.createRange();
     range.selectNode(copyFrom);
 
+    // copying to clipboard
     window.getSelection().removeAllRanges();
     window.getSelection().addRange(range);
     document.execCommand("copy");
     window.getSelection().removeAllRanges();
 
+    // showing popover and hiding it in 2 seconds
     $(copyResultBtn).popover('show');
     setTimeout(() => $(copyResultBtn).popover('hide'), 2000);
 };
 
 copyResultBtn.addEventListener('click', copy);
 
+// button that scrolls to cutter section
+const scrollToCutterBtn = document.querySelector(
+    '[data-appointment="scrollToCutter"]');
+
+// scrolls from welcome section to cutter section
+const scrollToCutter = event => {
+    const section = document.querySelector(
+            '[data-appointment="cutterSection"]');
+    scrollToBottom(section);
+};
+
+scrollToCutterBtn.addEventListener('click', scrollToCutter);
 
 
