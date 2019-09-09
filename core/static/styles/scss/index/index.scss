@@ -3,6 +3,10 @@
 
 .main {
   &-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
     height: 60px;
     @include gradient(top);
 
@@ -43,11 +47,23 @@
       }
 
       &-item {
-        padding: 0 20px;
+        padding: 0 15px;
         background: transparent;
         display: flex;
         align-items: center;
         height: 100%;
+        cursor: pointer;
+
+        &.sign-item {
+          @media (min-width: $_min_lg) {
+            position: absolute;
+            right: 0
+          }
+
+          i {
+            margin-left: 10px;
+          }
+        }
 
         @media (min-width: $_min_lg) {
           &:hover {
@@ -69,9 +85,10 @@
 
         @media (max-width: $_max_md) {
           padding: 0 0 10px 15px;
+          color: black!important;
 
           &:hover {
-            border-bottom: 2px solid white;
+            border-bottom: 2px solid black;
           }
         }
       }
@@ -88,6 +105,125 @@
 
       &-icon i {
         font-size: 20px;
+      }
+    }
+  }
+}
+
+.section.home {
+  &.welcome {
+    min-height: calc(100vh - 60px);
+    height: calc(100vh - 60px);
+    padding: 10%;
+    margin-top: 60px;
+    background: whitesmoke;
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      text-align: center;
+    }
+
+    .welcome {
+      &-title {
+        @include text(40, 700, black);
+        margin-top: 60px;
+      }
+
+      &-text {
+        margin-top: 30px;
+        @include text(26, 400, darkgray);
+      }
+
+      &-link {
+        border: 2px solid darkgray;
+        border-radius: 5px;
+        padding: 5px 10px;
+        background: white;
+        cursor: pointer;
+
+        &.more-features {
+          margin-top: 120px;
+        }
+
+        &-inside {
+          @include text(26, 400, darkgray);
+
+          &:hover {
+            font-style: italic;
+            border-bottom: 2px dashed darkgray;
+          }
+        }
+      }
+    }
+  }
+
+  &.cutter {
+    @include gradient();
+    padding: 40px;
+
+    @include logo();
+
+    .logo {
+      border: none;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .cutter {
+      &-input {
+        background: white;
+        border: none;
+        padding: 5px;
+        width: 100%;
+        @include text(24, 400, black);
+
+        &::placeholder {
+          @include text(24, 400, lightgray);
+        }
+
+        &-label {
+          width: calc(100% - 300px);
+          background: white;
+          padding: 9px 30px;
+          border-radius: 10px;
+        }
+      }
+
+      &-result {
+        background: white;
+        width: calc(100% - 300px);
+        padding: 14px 35px;
+        @include text(24, 400, gray);
+        border-radius: 10px;
+        margin-top: 30px;
+        position: relative;
+        display: none;
+
+        &-link {
+          margin-left: 10px;
+          color: black;
+        }
+
+        &-copy {
+          border: none;
+          background: transparent;
+          position: absolute;
+          right: 5px;
+          top: 5px;
+
+          i {
+            color: lightgray;
+          }
+        }
       }
     }
   }

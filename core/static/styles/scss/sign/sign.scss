@@ -20,9 +20,10 @@
     width: 68%;
     @include text(20, 500, white);
 
-    h1 {
+    &-title {
       @include text(30, 700, white);
-      margin-top: 70px;
+      margin: 70px 0 15px;
+
       span {
         padding: 5px;
         background-color: #2274ff;
@@ -33,7 +34,7 @@
 
   &-form {
     width: 100%;
-    margin-top: 30px;
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;

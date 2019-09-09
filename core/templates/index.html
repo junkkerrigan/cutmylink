@@ -11,12 +11,15 @@
     <link href="../static/styles/css/normalize.css" rel="stylesheet" type="text/css">
     <link href="../static/styles/css/index/index.css" rel="stylesheet" type="text/css">
 
-    <script src="https://kit.fontawesome.com/6ef5b74245.js"></script>
+    <script src="https://kit.fontawesome.com/6ef5b74245.js" async></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="../static/js/index/cutter.js" type="text/babel"></script>
 </head>
-<body style="background: black">
+<body>
+    <!-- TODO: dynamic header -->
     <header class="main-header">
         <div class="container h-100">
-            <nav class="navbar h-100 navbar-expand-lg navbar-light bg-light">
+            <nav class="navbar h-100 navbar-expand-lg navbar-light bg-light position-relative">
                 <h1 class="main-logo navbar-brand">
                     <a href='/' class="logo">
                         <span class="logo-text">Cutmylink</span>
@@ -25,13 +28,14 @@
                         </span>
                     </a>
                 </h1>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fas fa-bars"></i>
-                </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
+                    <!-- TODO: underline current link -->
                     <ul class="navbar-nav h-100">
                         <li class="nav-item active">
                             <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Features</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/">Statistics</a>
@@ -42,11 +46,83 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/">FAQ</a>
                         </li>
+                        <!-- TODO: changing to log out when authorized -->
+                        <li class="nav-item sign-item">
+                            <a href="login" class="nav-link">
+                                Log in
+                                <i class="fas fa-user-circle"></i>
+                            </a>
+                        </li>
                     </ul>
                 </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
             </nav>
         </div>
     </header>
+    <section class="section home welcome">
+        <div class="container">
+            <h2 class="welcome-title">
+                Powerful and easy-to-use URL shortener
+                with lots of functionality.
+            </h2>
+            <p class="welcome-text">
+                If you're tired of seeing those ugly links -
+                <!-- TODO: add sliding to shortener -->
+                <button class="welcome-link cutter-link">
+                    <span class="welcome-link-inside" data-appointment="slideToCutter">
+                        cut 'em
+                    </span>
+                </button>
+            </p>
+            <p>
+
+            </p>
+            <a href="features" class="welcome-link more-features">
+                <span class="welcome-link-inside">Explore more features</span>
+            </a>
+        </div>
+    </section>
+    <section class="section home cutter" data-appointment="cutterSection">
+        <div class="container">
+            <label class="cutter-input-label">
+                <input
+                    type="text"
+                    spellcheck="false"
+                    placeholder="Enter your link"
+                    name="longLink"
+                    class="cutter-input"
+                >
+            </label>
+            <button type="button" class="logo" data-appointment="cutLink">
+                <span class="logo-text">Cutmylink</span>
+                <span class="logo-icon">
+                    <i class="fas fa-cut"></i>
+                </span>
+            </button>
+            <div class="cutter-result" data-appointment="resultContainer">
+                Prettified link:
+                <span
+                    class="cutter-result-link"
+                    data-appointment="result"
+                ></span>
+                <button
+                    type="button"
+                    class="cutter-result-copy"
+                    data-appointment="copyResult"
+                    data-toggle="popover"
+                    data-placement="top"
+                    data-content="Copied!"
+                >
+                    <i class="far fa-copy"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+        Cutmylink - we're happy to cut your links!
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
