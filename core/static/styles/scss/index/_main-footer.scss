@@ -1,0 +1,30 @@
+@import "../variables";
+@import "../mixins";
+
+.main-footer {
+    background: $_whitesmoke;
+    padding: 10px 0;
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @include logo();
+
+    .logo {
+      &-text {
+        font-size: 18px;
+        font-weight: 400;
+      }
+
+      &-icon {
+        margin: 0 10px 0 5px;
+
+        i {
+          font-size: 16px;
+        }
+      }
+    }
+  }

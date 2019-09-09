@@ -1,0 +1,52 @@
+@import "../variables";
+@import "../mixins";
+
+.section.home.welcome {
+  min-height: calc(100vh - 60px);
+  height: calc(100vh - 60px);
+  padding: 10%;
+  margin-top: 60px;
+  background: $_whitesmoke;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+  }
+
+  .welcome {
+    &-title {
+      @include text(40, 700, $_black);
+      margin-top: 60px;
+    }
+
+    &-text {
+      margin-top: 30px;
+      @include text(26, 400, $_darkgray);
+    }
+
+    &-link {
+      border: 2px solid $_darkgray;
+      border-radius: 5px;
+      padding: 5px 10px;
+      background: white;
+      cursor: pointer;
+
+      &.more-features {
+        margin-top: 120px;
+      }
+
+      &-inside {
+        @include text(26, 400, $_darkgray);
+
+        &:hover {
+          font-style: italic;
+          border-bottom: 2px dashed $_darkgray;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,111 @@
+@import "../variables";
+@import "../mixins";
+
+.main {
+  &-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 60px;
+    @include gradient(top);
+
+    .nav {
+      position: relative;
+
+      &bar {
+        @include gradient(top);
+        padding: 0!important;
+
+        &-toggler {
+          border-color: $_white;
+          border-width: 1.5px;
+
+          i {
+            font-size: 30px;
+            color: $_white;
+          }
+        }
+
+        &-collapse {
+          margin-left: 30px;
+          transition: 0s;
+
+          @media (min-width: $_min_lg) {
+            height: 100%;
+          }
+
+          @media (max-width: $_max_md) {
+            margin-left: 0;
+            width: 200px;
+            position: absolute;
+            right: -20px;
+            bottom: 0;
+            transform: translate(0, 100%);
+          }
+        }
+      }
+
+      &-item {
+        padding: 0 15px;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        cursor: pointer;
+
+        &.sign-item {
+          @media (min-width: $_min_lg) {
+            position: absolute;
+            right: 0
+          }
+
+          i {
+            margin-left: 10px;
+          }
+        }
+
+        @media (min-width: $_min_lg) {
+          &:hover {
+            @include gradient();
+          }
+        }
+
+        @media (max-width: $_max_md) {
+          display: flex;
+          justify-content: flex-end;
+          padding: 10px 20px 10px 0;
+        }
+      }
+
+      &-link {
+        @include font(20, 500);
+        color: $_white!important;
+        border-bottom: 2px solid transparent;
+
+        @media (max-width: $_max_md) {
+          padding: 0 0 10px 15px;
+          color: $_black!important;
+
+          &:hover {
+            border-bottom: 2px solid $_black;
+          }
+        }
+      }
+    }
+  }
+
+  &-logo {
+    @include logo();
+
+    .logo {
+      &-text {
+        font-size: 22px;
+      }
+
+      &-icon i {
+        font-size: 20px;
+      }
+    }
+  }
+}
