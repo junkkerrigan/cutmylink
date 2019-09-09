@@ -1,3 +1,5 @@
+@import "variables";
+
 @mixin font($size, $weight) {
   font-size: #{$size + 'px'};
   font-weight: $weight;
@@ -11,14 +13,14 @@
 
 @mixin logo() {
   .logo {
-    background-color: white;
+    background-color: $_white;
     padding: 10px;
     border-radius: 10px;
     display: inline;
     width: 230px;
 
     &-text {
-      @include text(30, 700, black);
+      @include text(30, 700, $_black);
     }
 
     &-icon {
@@ -32,7 +34,7 @@
 
       i {
         font-size: 30px;
-        color: white
+        color: $_white
       }
     }
   }

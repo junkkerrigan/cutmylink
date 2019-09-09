@@ -79,8 +79,22 @@ const scrollToBottom = elem => {
 const cut = event => {
     // receiving long link
     const input = document.querySelector('input[name="longLink"]');
-    const longLink = input.value;
-    // TODO: add links validator
+    let longLink = input.value;
+
+    console.log(longLink);
+    // handles invalid links
+    if (
+        !(
+            longLink.startsWith('http://') ||
+            longLink.startsWith('https://') ||
+            longLink.startsWith('ftp://')
+        )
+    ) {
+        longLink = 'http://' + longLink;
+    }
+
+        console.log(longLink);
+
     // TODO: check if short url already exists
 
     // calculating id for long link
@@ -130,6 +144,9 @@ const redirect = event => {
 
     const shortLink = window.location.hash.substr(1);
     const longLink = localStorage.getItem(shortLink);
+
+            console.log(longLink);
+
 
     window.location.href = longLink;
 };

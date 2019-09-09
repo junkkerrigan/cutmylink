@@ -18,12 +18,12 @@
         padding: 0!important;
 
         &-toggler {
-          border-color: white;
+          border-color: $_white;
           border-width: 1.5px;
 
           i {
             font-size: 30px;
-            color: white;
+            color: $_white;
           }
         }
 
@@ -80,15 +80,15 @@
 
       &-link {
         @include font(20, 500);
-        color: white!important;
+        color: $_white!important;
         border-bottom: 2px solid transparent;
 
         @media (max-width: $_max_md) {
           padding: 0 0 10px 15px;
-          color: black!important;
+          color: $_black!important;
 
           &:hover {
-            border-bottom: 2px solid black;
+            border-bottom: 2px solid $_black;
           }
         }
       }
@@ -108,6 +108,34 @@
       }
     }
   }
+
+  &-footer {
+    background: $_whitesmoke;
+    padding: 10px 0;
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @include logo();
+
+    .logo {
+      &-text {
+        font-size: 18px;
+        font-weight: 400;
+      }
+
+      &-icon {
+        margin: 0 10px 0 5px;
+
+        i {
+          font-size: 16px;
+        }
+      }
+    }
+  }
 }
 
 .section.home {
@@ -116,7 +144,7 @@
     height: calc(100vh - 60px);
     padding: 10%;
     margin-top: 60px;
-    background: whitesmoke;
+    background: $_whitesmoke;
 
     .container {
       display: flex;
@@ -129,17 +157,17 @@
 
     .welcome {
       &-title {
-        @include text(40, 700, black);
+        @include text(40, 700, $_black);
         margin-top: 60px;
       }
 
       &-text {
         margin-top: 30px;
-        @include text(26, 400, darkgray);
+        @include text(26, 400, $_darkgray);
       }
 
       &-link {
-        border: 2px solid darkgray;
+        border: 2px solid $_darkgray;
         border-radius: 5px;
         padding: 5px 10px;
         background: white;
@@ -150,11 +178,11 @@
         }
 
         &-inside {
-          @include text(26, 400, darkgray);
+          @include text(26, 400, $_darkgray);
 
           &:hover {
             font-style: italic;
-            border-bottom: 2px dashed darkgray;
+            border-bottom: 2px dashed $_darkgray;
           }
         }
       }
@@ -180,29 +208,29 @@
 
     .cutter {
       &-input {
-        background: white;
+        background: $_white;
         border: none;
         padding: 5px;
         width: 100%;
-        @include text(24, 400, black);
+        @include text(24, 400, $_black);
 
         &::placeholder {
-          @include text(24, 400, lightgray);
+          @include text(24, 400, $_lightgray);
         }
 
         &-label {
           width: calc(100% - 300px);
-          background: white;
+          background: $_white;
           padding: 9px 30px;
           border-radius: 10px;
         }
       }
 
       &-result {
-        background: white;
+        background: $_white;
         width: calc(100% - 300px);
         padding: 14px 35px;
-        @include text(24, 400, gray);
+        @include text(24, 400, $_gray);
         border-radius: 10px;
         margin-top: 30px;
         position: relative;
@@ -210,7 +238,7 @@
 
         &-link {
           margin-left: 10px;
-          color: black;
+          color: $_black;
         }
 
         &-copy {
@@ -222,16 +250,15 @@
 
           &:hover {
            i {
-              color: gray;
+              color: $_gray;
             }
           }
 
           i {
-            color: lightgray;
+            color: $_lightgray;
           }
         }
       }
     }
   }
 }
-

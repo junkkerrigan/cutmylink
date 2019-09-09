@@ -25,3 +25,10 @@ class LoginView(HTMLTemplateView):
     template_name = 'login.html'
 
 
+class FeatureView(HTMLTemplateView):
+    template_name = 'features.html'
+
+class Four04View(HTMLTemplateView):
+    template_name = '404.html'
+
+
